@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  api:
+    build: 
+      context: ./docker/api
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend:/workspace/backend
+    working_dir: /workspace/backend
+    ports:
+      - 8000:8000
+    tty: true
